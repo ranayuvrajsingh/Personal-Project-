@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Himanshi 💖</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body {
+    margin:0;
+    height:100vh;
+    overflow:hidden;
+    background: radial-gradient(circle,#ff9ecb,#ff4d88);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Great Vibes', cursive;
+}
+
+.container {
+    text-align:center;
+    color:white;
+}
+
+h1 {
+    font-size:60px;
+    text-shadow:0 0 15px pink;
+}
+
+button {
+    position:absolute;
+    padding:15px 35px;
+    font-size:22px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+#yes {
+    background:#ff0066;
+    color:white;
+    box-shadow:0 0 20px #ff66a3;
+    left:40%;
+}
+
+#yes:hover {
+    transform:scale(1.1);
+}
+
+#no {
+    background:#222;
+    color:white;
+    left:55%;
+}
+
+/* floating hearts */
+.heart {
+    position:absolute;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float {
+    0%{bottom:-20px;opacity:1;}
+    100%{bottom:100%;opacity:0;}
+}
+
+#meme {
+    display:none;
+}
+
+img {
+    width:280px;
+    border-radius:20px;
+    box-shadow:0 0 20px pink;
+}
+
+p {
+    font-size:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="text">Himanshi 💖 Will you be my Valentine?</h1>
+
+<button id="yes">Always YES ❤️</button>
+<button id="no">NO 😈</button>
+
+<div id="meme">
+<h1>✨ Accio Girlfriend! ✨</h1>
+<img src="https://i.imgur.com/t5xYq5P.jpeg">
+<p>You just cast the strongest love spell on me 🪄❤️</p>
+</div>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const meme = document.getElementById("meme");
+const text = document.getElementById("text");
+
+// NO runs away
+noBtn.addEventListener("mouseover",()=>{
+    let x=Math.random()*(window.innerWidth-120);
+    let y=Math.random()*(window.innerHeight-60);
+    noBtn.style.left=x+"px";
+    noBtn.style.top=y+"px";
+});
+
+// YES clicked
+yesBtn.onclick=()=>{
+    text.style.display="none";
+    yesBtn.style.display="none";
+    noBtn.style.display="none";
+    meme.style.display="block";
+};
+
+// floating hearts
+setInterval(()=>{
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💗";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.fontSize=Math.random()*20+15+"px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),6000);
+},300);
+
+</script>
+
+</body>
+</html>
