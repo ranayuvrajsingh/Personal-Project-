@@ -71,3 +71,16 @@ c.style.left=Math.random()*100+"%";
 document.body.appendChild(c);
 setTimeout(()=>c.remove(),3000);
 }
+
+// Magical sparkles around screen
+setInterval(()=>{
+const s=document.createElement("div");
+s.innerHTML="✨";
+s.style.position="absolute";
+s.style.left=Math.random()*100+"%";
+s.style.top=Math.random()*100+"%";
+s.style.opacity=".6";
+document.body.appendChild(s);
+setTimeout(()=>s.remove(),1200);
+},500);
+
